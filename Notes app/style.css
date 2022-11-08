@@ -24,6 +24,24 @@ body {
   row-gap: 5px;
 }
 
+#add-note {
+  padding: 0.8rem 1rem;
+  background-color: #3d1164;
+  color: white;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  margin: 0 10%;
+}
+
+form > #add-note {
+  margin-top: 10px;
+}
+
+form button:hover {
+  opacity: 0.9;
+}
+
 .form textarea,
 input {
   width: 100%;
