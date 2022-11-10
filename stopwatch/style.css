@@ -19,18 +19,18 @@ body {
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-.heading {
-  color: white;
-  font-size: 3rem;
-}
-
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 5rem;
+  margin-top: 10rem;
   row-gap: 20px;
+}
+
+.heading {
+  color: white;
+  font-size: 3rem;
 }
 
 .time-display {
@@ -54,17 +54,19 @@ body {
 .btn-container button {
   display: block;
   margin-top: 4rem;
-  padding: 1rem 1.5rem;
-  margin-left: 10px;
+  padding: 0.8rem 1.2rem;
+  margin-right: 10px;
 }
 
 button {
-  background-color: rgb(204, 214, 19);
+  background-color: rgb(136, 239, 92);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   outline: none;
   border: 2px navy;
-  color: rgb(14, 14, 201);
-  font-size: 1.1rem;
+  color: rgb(5, 20, 105);
+  font-size: 1.2rem;
   border-radius: 5px;
+  font-weight: 600;
 }
 
 button:active {

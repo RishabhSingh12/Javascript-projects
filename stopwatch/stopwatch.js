@@ -59,7 +59,6 @@ function pause() {
   if (interval && seconds > 0) {
     clearInterval(interval);
     interval = null;
-    console.log("pause");
   } else {
     return;
   }
