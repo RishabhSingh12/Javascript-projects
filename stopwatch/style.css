@@ -1,0 +1,72 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  background: #6a3093; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #a044ff,
+    #6a3093
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #a044ff,
+    #6a3093
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.heading {
+  color: white;
+  font-size: 3rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5rem;
+  row-gap: 20px;
+}
+
+.time-display {
+  margin-top: 3rem;
+}
+
+.time {
+  font-size: 2rem;
+  padding: 2rem 3rem;
+  background-color: rgb(8, 18, 128);
+  color: white;
+  border-radius: 10px;
+}
+
+.btn-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn-container button {
+  display: block;
+  margin-top: 4rem;
+  padding: 1rem 1.5rem;
+  margin-left: 10px;
+}
+
+button {
+  background-color: rgb(204, 214, 19);
+  outline: none;
+  border: 2px navy;
+  color: rgb(14, 14, 201);
+  font-size: 1.1rem;
+  border-radius: 5px;
+}
+
+button:active {
+  opacity: 0.8;
+}
