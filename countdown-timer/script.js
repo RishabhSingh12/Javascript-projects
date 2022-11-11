@@ -6,16 +6,6 @@ let hrs = document.getElementById("hour");
 let mins = document.getElementById("minute");
 let secs = document.getElementById("sec");
 
-// if (secs.value < 10) {
-//   secs.value = "00";
-// }
-// if (hrs.value < 10) {
-//   hrs.value = "00";
-// }
-// if (mins.value < 10) {
-//   mins.value = "00";
-// }
-
 let interval = null;
 
 function timer() {
