@@ -67,7 +67,7 @@ function pause() {
 //resume function
 
 resumebtn.addEventListener("click", () => {
-  if (!seconds) {
+  if (!seconds || interval) {
     return;
   }
 
