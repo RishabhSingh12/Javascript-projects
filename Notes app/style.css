@@ -42,6 +42,10 @@ form button:hover {
   opacity: 0.9;
 }
 
+.form textarea {
+  resize: vertical;
+}
+
 .form textarea,
 input {
   width: 100%;
@@ -83,6 +87,16 @@ hr {
   margin-bottom: 15px;
 }
 
+#note > p {
+  word-wrap: break-word;
+  /* overflow: hidden; */
+}
+
+.fallback {
+  width: 87%;
+  text-align: start;
+}
+
 /* buttons */
 .note-btn {
   padding: 0.3rem 1rem;
@@ -117,7 +131,17 @@ hr {
     width: 75%;
   }
 
+  .fallback {
+    text-align: center;
+  }
+
   #note {
     width: 60%;
+  }
+}
+
+@media screen and (min-width: 1001px) {
+  .fallback {
+    text-align: center;
   }
 }

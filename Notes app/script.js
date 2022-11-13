@@ -8,30 +8,30 @@ addbtn.addEventListener("click", (e) => {
   }
 
   let notes = localStorage.getItem("notes");
-  if (notes === nul) {
+  if (notes === null) {
     notesobj = [];
   } else {
     notesobj = JSON.parse(notes);
   }
 
   let myObj = {
-    title: addTitle.value,
-    text: addText.value,
+    notetitle: title.value,
+    notetext: text.value,
   };
 
   notesobj.push(myObj);
   localStorage.setItem("notes", JSON.stringify(notesobj));
 
-  addTitle.value = "";
-  addText.value = "";
+  title.value = "";
+  text.value = "";
 
-  displaynotes();
+  //   displaynotes();
 });
 
 // function for displaying notes
 function displaynotes() {
   let notes = localStorage.getItem("notes");
-  if (notes === nul) {
+  if (notes === null) {
     notesobj = [];
   } else {
     notesobj = JSON.parse(notes);
@@ -40,11 +40,20 @@ function displaynotes() {
   let html = "";
   notesobj.forEach((ele, idx) => {
     html += `<div id="note">
-                    <p class="note-counter">Note 1</p>
-                    <h3 class="note-title">Hello World</h3>
-                    <p class="note-text">Some Note text</p>
-                    <button class="note-btn">Delete</button>
-                    <button class="note-btn edit-btn">Edit</button>
+                    <p class="note-counter">Note ${idx + 1}</p>
+                    <h3 class="note-title">${ele.notetitle}</h3>
+                    <p class="note-text">${ele.notetext}</p>
+                    <button id="${idx}" onclick="deleteNote(this.id)" class="note-btn">Delete</button>
+                    <button id="${idx}" onclick="editNote(this.id)" class="note-btn edit-btn">Edit</button>
                 </div>`;
   });
+
+  let notesElement = document.getElementById("notes");
+  if (notesobj.length > 0) {
+    notesElement.innerHTML = html;
+  } else {
+    notesElement.innerHTML = `<h1 class="fallback">No notes to display. Please add one!</h1>`;
+  }
 }
+
+displaynotes();
