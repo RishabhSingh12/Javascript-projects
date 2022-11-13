@@ -4,6 +4,21 @@ const text = document.getElementById("text");
 
 addbtn.addEventListener("click", (e) => {
   if (!(title.value && text.value)) {
-    alert("Please enter both note-title and note-text");
+    return alert("Please enter both note-title and note-text");
   }
+
+  let notes = localStorage.getItem("notes");
+  if (notes === nul) {
+    notesobj = [];
+  } else {
+    notesobj = JSON.parse(notes);
+  }
+
+  let myObj = {
+    title: addTitle.value,
+    text: addText.value,
+  };
+
+  notesObj.push(myObj);
+  localStorage.setItem("notes", JSON.stringify(notesObj));
 });
