@@ -1,6 +1,7 @@
 const addbtn = document.getElementById("add-note");
 const title = document.getElementById("note-title");
 const text = document.getElementById("note-text");
+let notesobj;
 
 addbtn.addEventListener("click", (e) => {
   e.preventDefault();
@@ -9,7 +10,7 @@ addbtn.addEventListener("click", (e) => {
   }
 
   let notes = localStorage.getItem("notes");
-  let notesobj;
+  // let notesobj;
   if (notes == null) {
     notesobj = [];
   } else {
@@ -33,7 +34,7 @@ addbtn.addEventListener("click", (e) => {
 // function for displaying notes
 function displaynotes() {
   let notes = localStorage.getItem("notes");
-  let notesobj;
+  // let notesobj;
   if (notes == null) {
     notesobj = [];
   } else {
@@ -66,7 +67,7 @@ function deleteNote(idx) {
   let cnf = confirm("Are u sure , u want to delete this note ?");
   if (cnf == true) {
     let notes = localStorage.getItem("notes");
-    let notesobj;
+    // let notesobj;
     if (notes == null) {
       notesobj = [];
     } else {
@@ -82,7 +83,7 @@ function deleteNote(idx) {
 // edit note
 function editNote(idx) {
   let notes = localStorage.getItem("notes");
-  let notesObj;
+  // let notesObj;
 
   if (title.value !== "" || text.value !== "") {
     return alert("Please clear the form fields before editing !");
@@ -90,15 +91,20 @@ function editNote(idx) {
 
   if (notes == null) {
     alert("You don't have any note to edit! Please add one !!");
-    notesObj = [];
+    notesobj = [];
   } else {
-    notesObj = JSON.parse(notes);
+    notesobj = JSON.parse(notes);
   }
 
-  title.value = notesObj[idx].notetitle;
-  text.value = notesObj[idx].notetext;
+  title.value = notesobj[idx].notetitle;
+  text.value = notesobj[idx].notetext;
 
-  notesObj.splice(idx, 1);
-  localStorage.setItem("notes", JSON.stringify(notesObj));
+  notesobj[idx].notetitle = title.value;
+  notesobj[idx].notetext = text.value;
+
+  notesobj.splice(idx, 1);
+
+  localStorage.setItem("notes", JSON.stringify(notesobj));
+
   displaynotes();
 }
