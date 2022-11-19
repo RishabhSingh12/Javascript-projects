@@ -83,8 +83,6 @@ function deleteNote(idx) {
 function editNote(idx) {
   let notes = localStorage.getItem("notes");
   let notesObj;
-  const title = document.getElementById("note-title");
-  const text = document.getElementById("note-text");
 
   if (title.value !== "" || text.value !== "") {
     return alert("Please clear the form fields before editing !");
