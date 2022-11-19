@@ -86,7 +86,7 @@ function editNote(idx) {
   const title = document.getElementById("note-title");
   const text = document.getElementById("note-text");
 
-  if (title.value !== null || text.value !== null) {
+  if (title.value !== "" || text.value !== "") {
     return alert("Please clear the form fields before editing !");
   }
 
@@ -102,7 +102,7 @@ function editNote(idx) {
     text.value = ele.notetext;
   });
 
-  notesobj.splice(idx, 1);
-  localStorage.setItem("notes", JSON.stringify(notesobj));
+  notesObj.splice(idx, 1);
+  localStorage.setItem("notes", JSON.stringify(notesObj));
   displaynotes();
 }
