@@ -97,10 +97,13 @@ function editNote(idx) {
     notesObj = JSON.parse(notes);
   }
 
-  notesObj.findIndex((ele, index) => {
-    title.value = ele.notetitle;
-    text.value = ele.notetext;
-  });
+  // notesObj.findIndex((ele, index) => {
+  //   title.value = ele.notetitle;
+  //   text.value = ele.notetext;
+  // });
+
+  title.value = notesObj[idx].notetitle;
+  text.value = notesObj[idx].notetext;
 
   notesObj.splice(idx, 1);
   localStorage.setItem("notes", JSON.stringify(notesObj));
