@@ -97,11 +97,6 @@ function editNote(idx) {
     notesObj = JSON.parse(notes);
   }
 
-  // notesObj.findIndex((ele, index) => {
-  //   title.value = ele.notetitle;
-  //   text.value = ele.notetext;
-  // });
-
   title.value = notesObj[idx].notetitle;
   text.value = notesObj[idx].notetext;
 
