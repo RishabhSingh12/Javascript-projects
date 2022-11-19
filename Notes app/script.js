@@ -1,6 +1,6 @@
 const addbtn = document.getElementById("add-note");
-const title = document.getElementById("title");
-const text = document.getElementById("text");
+const title = document.getElementById("note-title");
+const text = document.getElementById("note-text");
 
 addbtn.addEventListener("click", (e) => {
   e.preventDefault();
@@ -27,7 +27,7 @@ addbtn.addEventListener("click", (e) => {
   title.value = "";
   text.value = "";
 
-  // displaynotes();
+  displaynotes();
 });
 
 // function for displaying notes
@@ -61,19 +61,19 @@ function displaynotes() {
 
 displaynotes();
 
-// function deleteNote(idx) {
-//   let cnf = confirm("Are u sure , u want to delete this note ?");
-//   if (cnf == true) {
-//     let notes = localStorage.getItem("notes");
-//     let notesobj;
-//     if (notes == null) {
-//       notesobj = [];
-//     } else {
-//       notesobj = JSON.parse(notes);
-//     }
+function deleteNote(idx) {
+  let cnf = confirm("Are u sure , u want to delete this note ?");
+  if (cnf == true) {
+    let notes = localStorage.getItem("notes");
+    let notesobj;
+    if (notes == null) {
+      notesobj = [];
+    } else {
+      notesobj = JSON.parse(notes);
+    }
 
-//     notesobj.splice(idx, 1);
-//     localStorage.setItem("notes", JSON.stringify(notesobj));
-//     displaynotes();
-//   }
-// }
+    notesobj.splice(idx, 1);
+    localStorage.setItem("notes", JSON.stringify(notesobj));
+    displaynotes();
+  }
+}
