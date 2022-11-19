@@ -61,6 +61,7 @@ function displaynotes() {
 
 displaynotes();
 
+// delete note
 function deleteNote(idx) {
   let cnf = confirm("Are u sure , u want to delete this note ?");
   if (cnf == true) {
@@ -76,4 +77,32 @@ function deleteNote(idx) {
     localStorage.setItem("notes", JSON.stringify(notesobj));
     displaynotes();
   }
+}
+
+// edit note
+function editNote(idx) {
+  let notes = localStorage.getItem("notes");
+  let notesObj;
+  const title = document.getElementById("note-title");
+  const text = document.getElementById("note-text");
+
+  if (title.value !== null || text.value !== null) {
+    return alert("Please clear the form fields before editing !");
+  }
+
+  if (notes == null) {
+    alert("You don't have any note to edit! Please add one !!");
+    notesObj = [];
+  } else {
+    notesObj = JSON.parse(notes);
+  }
+
+  notesObj.findIndex((ele, index) => {
+    title.value = ele.notetitle;
+    text.value = ele.notetext;
+  });
+
+  notesobj.splice(idx, 1);
+  localStorage.setItem("notes", JSON.stringify(notesobj));
+  displaynotes();
 }
