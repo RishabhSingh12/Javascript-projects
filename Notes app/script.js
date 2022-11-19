@@ -35,22 +35,22 @@ addbtn.addEventListener("click", (e) => {
 function displaynotes() {
   let notes = localStorage.getItem("notes");
   // let notesobj;
+  let html = "";
   if (notes == null) {
     notesobj = [];
   } else {
     notesobj = JSON.parse(notes);
-  }
 
-  let html = "";
-  notesobj.forEach((ele, idx) => {
-    html += `<div id="note">
+    notesobj.forEach((ele, idx) => {
+      html += `<div id="note">
                     <p class="note-counter">Note ${idx + 1}</p>
                     <h3 class="note-title">${ele.notetitle}</h3>
                     <p class="note-text">${ele.notetext}</p>
                     <button id="${idx}" onclick="deleteNote(this.id)" class="note-btn">Delete</button>
                     <button id="${idx}" onclick="editNote(this.id)" class="note-btn edit-btn">Edit</button>
                 </div>`;
-  });
+    });
+  }
 
   let notesElement = document.getElementById("notes");
   if (notesobj.length > 0) {
@@ -83,6 +83,7 @@ function deleteNote(idx) {
 // edit note
 function editNote(idx) {
   let notes = localStorage.getItem("notes");
+
   // let notesObj;
 
   if (title.value !== "" || text.value !== "") {
