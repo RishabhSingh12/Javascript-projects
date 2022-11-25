@@ -12,7 +12,7 @@
 
 <body>
     <div class="budget-container">
-        <div class="title">Expense-tracker</div>
+        <div class="app-title">Expense-tracker</div>
         <div class="budget-header">
             <div class="balance">
                 <h1 class="balance">Balance</h1>
@@ -41,8 +41,27 @@
             <div class="tab3">All</div>
         </div>
 
-        <div class="hide" id="expense"></div>
-        <div id="income">
+        <div class="hide" id="income">
+            <ul class="list"></ul>
+            <div class="input">
+                <input type="text" id="income-title-input" name="title" placeholder="title">
+                <input type="number" id="income-amount-input" name="amount" placeholder="$0">
+                <div class="add-income"><img src="" alt=""></div>
+            </div>
+        </div>
+
+        <div class="hide" id="expense">
+            <ul class="list"></ul>
+            <div class="input">
+                <input type="text" id="expense-title-input" name="title" placeholder="title">
+                <input type="number" id="expense-amount-input" name="amount" placeholder="$0">
+                <div class="add-income"><img src="" alt=""></div>
+            </div>
+        </div>
+
+
+
+        <!-- <div id="income">
             <ul class="list">
                 <li id="0" class="income">
                     <div class="entry">Salary: $ 8000</div>
@@ -56,7 +75,7 @@
                 <input type="number" name="" id="income-amount-input" placeholder="$0">
                 <div class="add-income"></div>
             </div>
-        </div>
+        </div> -->
         <div class="hide" id="all"></div>
     </div>
 </body>
