@@ -27,7 +27,13 @@ root.innerHTML = html;
 const btnHandler = (e) => {
   let str1 = e.target.previousElementSibling.textContent.split("-");
   let qty = str1[1].trim();
-  qty--;
-  e.target.previousElementSibling.textContent = `Qty- ${qty}`;
+  if (qty > 0) {
+    qty--;
+    e.target.previousElementSibling.textContent = `Qty- ${qty}`;
+  } else {
+    e.target.previousElementSibling.textContent = `No more items to add !`;
+    e.target.classList.add("bg-gray-300");
+    e.target.disabled = true;
+  }
 };
 root.addEventListener("click", btnHandler, true);
