@@ -6,9 +6,9 @@ let html = "";
 let res = data.map((ele) => {
   html =
     html +
-    `<div class="w-[80%]  p-6 border-gray-300 border-2 rounded-xl md:w-[40%] flex-col justify-center items-center text-center shadow-xl bg-white space-y-4">
+    `<div class="w-[80%] p-6 border-gray-300 border-2 rounded-xl md:w-[40%] flex-col justify-center items-center text-center shadow-xl bg-white space-y-4">
         <div class="img-container flex justify-center pb-4">
-            <img src='${ele?.image}' class="md:h-[350px] h-[250px] "/>
+            <img src='${ele?.image}' class="md:h-[350px] h-[250px]" loading="lazy"/>
         </div>
         <p class="md:w-[80%] mx-auto text-lg font-[600]">${ele?.title}</p>
         <p class="text-center font-bold font-serif"><span>Price-</span> $ ${ele?.price}</p>
