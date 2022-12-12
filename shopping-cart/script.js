@@ -2,6 +2,7 @@ import { cartdata as data } from "./cartdata.js";
 
 const root = document.querySelector(".root1");
 
+// displaying data
 let html = "";
 let res = data.map((ele) => {
   html =
