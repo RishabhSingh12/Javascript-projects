@@ -20,7 +20,8 @@ let res = data.map((ele, idx) => {
     `;
 });
 
-// console.log(res);
+// let demo = html.split("<br/>")[19];
+// console.log(demo.includes("btn-cart18"));
 root.innerHTML = html;
 
 // Adding to cart logic
