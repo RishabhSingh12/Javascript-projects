@@ -7,7 +7,7 @@ let html = "";
 let res = data.map((ele, idx) => {
   html =
     html +
-    `<div class="card${idx} w-[80%] p-6 border-gray-300 border-2 rounded-xl md:w-[40%] flex-col justify-center items-center text-center shadow-xl bg-white space-y-4">
+    `<div id=${ele.id} class="card${idx} w-[80%] p-6 border-gray-300 border-2 rounded-xl md:w-[40%] flex-col justify-center items-center text-center shadow-xl bg-white space-y-4">
         <div class="img-container flex justify-center pb-4">
             <img src='${ele?.image}' class="md:h-[350px] h-[250px]" loading="lazy"/>
         </div>
