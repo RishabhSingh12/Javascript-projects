@@ -1,5 +1,5 @@
 import { cartdata as data } from "./cartdata.js";
-
+import { addItems } from "./cartpage.js";
 const root = document.querySelector(".root1");
 
 // displaying data
@@ -20,8 +20,8 @@ let res = data.map((ele, idx) => {
     `;
 });
 
-// let demo = html.split("<br/>")[19];
-// console.log(demo.includes("btn-cart18"));
+// let demo = html.split("<br/>")[1];
+// console.log(demo.includes("2"));
 root.innerHTML = html;
 
 // Adding to cart logic
@@ -36,5 +36,9 @@ const btnHandler = (e) => {
     e.target.classList.add("bg-gray-300");
     e.target.disabled = true;
   }
+
+  // console.log(e.target.parentElement.id);
+
+  addItems(html, e.target.parentElement.id);
 };
 root.addEventListener("click", btnHandler, true);
