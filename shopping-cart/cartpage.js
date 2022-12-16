@@ -15,10 +15,4 @@ export const addItems = (html, data, id) => {
   }
 
   return { ...foundEl, qty: 1 };
-
-  //   if (demo.includes(id)) {
-  //     let foundItem = cartitems.find((ele) => {
-  //       ele.id === id;
-  //     });
-  //   }
 };
