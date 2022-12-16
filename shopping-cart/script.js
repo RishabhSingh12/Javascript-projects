@@ -40,7 +40,8 @@ const btnHandler = (e) => {
 
   // console.log(e.target.parentElement.id);
 
-  cartitems.push(addItems(html, data, e.target.parentElement.id));
+  // cartitems.push(addItems(html, data, e.target.parentElement.id));
+  addItems(html, data, e.target.parentElement.id);
 };
 console.log(cartitems);
 root.addEventListener("click", btnHandler, true);
