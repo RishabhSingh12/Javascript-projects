@@ -1,6 +1,7 @@
 import { cartdata as data } from "./cartdata.js";
 import { addItems } from "./cartpage.js";
 const root = document.querySelector(".root1");
+export let cartitems = [];
 
 // displaying data
 let html = "";
@@ -39,6 +40,7 @@ const btnHandler = (e) => {
 
   // console.log(e.target.parentElement.id);
 
-  addItems(html, e.target.parentElement.id);
+  cartitems.push(addItems(html, data, e.target.parentElement.id));
 };
+console.log(cartitems);
 root.addEventListener("click", btnHandler, true);
